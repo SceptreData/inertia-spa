@@ -33,12 +33,12 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::get(
-    '/songs',
-    'App\Http\Controllers\SongController@index'
-)->middleware(['auth', 'verified'])->name('songs');
+// Route::get(
+//     '/songs',
+//     'App\Http\Controllers\SongController@index'
+// )->middleware(['auth', 'verified'])->name('songs');
 
 
-// Route::resource('songs', 'App\Http\Controllers\SongController');
+Route::resource('songs', 'App\Http\Controllers\SongController');
 
 require __DIR__.'/auth.php';

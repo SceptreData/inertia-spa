@@ -23,7 +23,7 @@ function NavBar({ auth }) {
               <NavLink href={route('dashboard')} active={route().current('dashboard')}>
                 Dashboard
               </NavLink>
-              <NavLink href={route('songs')} active={route().current('songs')}>
+              <NavLink href={route('songs.index')} active={route().current('songs')}>
                 Songs
               </NavLink>
             </div>
