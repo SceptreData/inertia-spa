@@ -9,7 +9,9 @@ import { InertiaProgress } from '@inertiajs/progress';
 const el = document.getElementById('app');
 
 render(
-    <App initialPage={JSON.parse(el.dataset.page)} resolveComponent={(name) => require(`./Pages/${name}`).default} />,
+    <App initialPage={JSON.parse(el.dataset.page)} 
+         resolveComponent={(name) => require(`./Pages/${name}`).default} 
+        />,
     el
 );
 

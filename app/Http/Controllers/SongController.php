@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Song;
 use Illuminate\Http\Request;
 
+use Inertia\Inertia;
+
 class SongController extends Controller
 {
     /**
@@ -15,6 +17,9 @@ class SongController extends Controller
     public function index()
     {
         //
+        return Inertia::render('Songs/index', [
+            'songs' => Song::all()->load(['artist', 'album'])
+        ]);
     }
 
     /**
@@ -47,6 +52,7 @@ class SongController extends Controller
     public function show(Song $song)
     {
         //
+        return Inertia::render('Songs', compact('song'));
     }
 
     /**
